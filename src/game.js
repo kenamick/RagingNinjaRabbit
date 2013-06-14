@@ -15,6 +15,12 @@ define([], function() {
 			$('#loading').hide();
 		});		
 
+        // show FPS
+        Crafty.e("2D, DOM, FPS").attr({maxValues:10})
+        .bind("MessureFPS", function(fps) {
+            $('#fps').text('FPS: ' + fps.value);
+        });
+
 
 
 	});
