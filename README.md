@@ -1,17 +1,18 @@
-_.o0 Pincode (prototype) 0o._
+_.o0 Pin code 0o._
 ==========================
+*(working title)*
 
-HTML5/Javascript web browser game. E
+HTML5/Javascript web browser game prototype.
 
 # Controls
-Collect as many carrots as possible in **3 minutes**. Use the controls to move and repel opponents.
+Use the controls to move around the rooms.
 
-  * **Arrow keys** - Move your ninja rabbit on the map.
+  * **Arrow keys** - Move your character.
 
 # Open Source Libraries
 Uses the following javascript libraries:
 
   * [Crafty](http://craftyjs.com/) - An amazing Javascript/HTML5 Game engine.  
+  * [TiledMapBuilder](https://github.com/Kibo/TiledMapBuilder) - Crafty component that helpd rendering Tiled maps.
   * [jQuery](http://jquery.com/) - The Write Less, Do More, JavaScript Library
   * [Require.js](http://requirejs.org/) - RequireJS is a JavaScript file and module loader. 
-
