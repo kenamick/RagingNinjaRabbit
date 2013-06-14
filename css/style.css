@@ -1,0 +1,23 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body, html { 
+    /*overflow:hidden; */
+    background: #000;
+    font-family: Tahoma, Sans-serif, Helvetica;
+} 
+
+#cr-stage {
+   margin: 0 auto; 
+    position: relative;
+    width: 1024px;
+    height: 768px;
+}
+
+#loading {
+    margin-top: 150px;
+    color: white;
+    font-size: 16pt;
+    text-align: center;
+}

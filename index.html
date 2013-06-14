@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Pincode (prototype)</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link type="text/css" href="css/style.css" rel="stylesheet" /> 
+</head>
+<body>
+<!--[if lt IE 8]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+    <div id="cr-stage">
+        <div id="loading"></div>
+
+    </div>
+
+    <!-- libraries -->
+    <script type="text/javascript" src="lib/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="lib/crafty-0.5.4.min.js"></script>
+    <script type="text/javascript" src="lib/tiledmapbuilder.js"></script>
+    <script type="text/javascript" src="lib/create_mocks_module.js"></script>
+    <script type="text/javascript" src="lib/underscore-min.js"></script>
+    <!-- game stuff -->    
+    <script type="text/javascript">
+    _Globals = {
+        env : 'dev',
+        version : '0.9.7',
+        scene : 'splash'
+    };
+    var require = {
+         waitSeconds: 15,
+         urlArgs : "bust=" + new Date().getTime(),
+    };    
+    </script> 
+    <script data-main="src/bootstrap.js" src="lib/require.js"></script>
+
+</body>
+</html>

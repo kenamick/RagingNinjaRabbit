@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="25" height="18" tilewidth="40" tileheight="40">
+ <tileset firstgid="1" name="Walls-1" tilewidth="40" tileheight="40">
+  <image source="art/tiles1.png" width="640" height="480"/>
+ </tileset>
+ <tileset firstgid="193" name="Floor-1" tilewidth="40" tileheight="40">
+  <image source="art/tiles3.png" width="640" height="480"/>
+  <terraintypes>
+   <terrain name="Floor" tile="-1"/>
+  </terraintypes>
+ </tileset>
+ <tileset firstgid="385" name="BENCH" tilewidth="40" tileheight="40">
+  <image source="art/tiles2.png" trans="ffffff" width="640" height="480"/>
+ </tileset>
+ <layer name="Tiles 1" width="25" height="18">
+  <data encoding="base64" compression="zlib">
+   eJyNlE1KBDEQRnMGZRh0qYjoVkT0GC49xiw9hkuXyjDocYYQQtOHsRqq8PlZGWbxSKeSfPWX9Ekp5dRYGWtnJaxlTfepPTgzzo0L49K4Fq4czrM9h87dGLfGs3Fn3DsPR8C9ozOL/dF4MjbG3mk+Vv9e6Jh3X+dYca6D0AsfFX5mY3LmAdTi/gk64fPFa8WYqD36nsW+T7Qjt/ChNahJ3h0a4a/Kek80NA/ubck56rPm7CF1mvvYiFamn9VH51P5G3/WD+0598V5ajWsTTijdY48WKNjYmVNeG+pEzG/lt+7y/vKPLROzLmJXvbNfjAG3sfRe6nJmvroyIN2arAfWe2yb60X38ehN6E+NNfs7cUdY895z7mfsTIGnY/e61Krt8SusfEfw5ExtfK/F4vt3fgwPo2tsQNbMLLpuJP5l/Ft/ACqnTUk
+  </data>
+ </layer>
+ <layer name="Tiles 3 - Shadows" width="25" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4A+4BQjA8NpID7BSLres0TquQVUdxuIbwDxTTLsGergGg39fJRGZl8CmnsZiK8Mwng7N4jcMgpoBwCj4w00
+  </data>
+ </layer>
+ <layer name="Tiles 2" width="25" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4A+YBYjA8NsIJ7JSLreuSTqWUmGHaMAE0wChuNkIJ4CxDNoFKaLgOYuBuIlQLxikMXbvEHmnlFAGwAAMwYIow==
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1" width="25" height="18">
+  <object name="Collision box" type="col" x="200" y="240" width="79" height="45"/>
+  <object name="Collision box" type="col" x="564" y="403" width="117" height="62"/>
+  <object name="Collision box" type="col" x="683" y="423" width="33" height="39"/>
+  <object name="Collision box" type="col" x="281" y="263" width="32" height="33"/>
+  <object name="Portal1" type="portal" x="460" y="108" width="86" height="34">
+   <properties>
+    <property name="id" value="1"/>
+    <property name="toPortal" value="1"/>
+    <property name="toRoom" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
