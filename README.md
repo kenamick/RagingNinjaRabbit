@@ -4,10 +4,11 @@ _.o0 Pin Code 0o._
 
 HTML5/Javascript game prototype.
 
-# Controls
+# How to play
 Use the controls to move around the rooms.
 
-  * **Arrow keys** - Move your character.
+  * Mouse **click** or **tap** moves your character.
+  * Move character to a door to enter different rooms.
 
 # Open Source Libraries
 Uses the following javascript libraries:
