@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="25" height="18" tilewidth="40" tileheight="40">
+<map version="1.0" orientation="orthogonal" width="25" height="17" tilewidth="40" tileheight="40">
  <tileset firstgid="1" name="Walls-1" tilewidth="40" tileheight="40">
   <image source="art/tiles1.png" width="640" height="480"/>
  </tileset>
@@ -12,31 +12,63 @@
  <tileset firstgid="385" name="BENCH" tilewidth="40" tileheight="40">
   <image source="art/tiles2.png" trans="ffffff" width="640" height="480"/>
  </tileset>
- <layer name="Tiles 1" width="25" height="18">
+ <tileset firstgid="577" name="Walls-2" tilewidth="40" tileheight="40">
+  <image source="art/tiles5.png" width="640" height="480"/>
+ </tileset>
+ <layer name="Tiles 1" width="25" height="17">
   <data encoding="base64" compression="zlib">
-   eJyNlE1KBDEQRnMGZRh0qYjoVkT0GC49xiw9hkuXyjDocYYQQtOHsRqq8PlZGWbxSKeSfPWX9Ekp5dRYGWtnJaxlTfepPTgzzo0L49K4Fq4czrM9h87dGLfGs3Fn3DsPR8C9ozOL/dF4MjbG3mk+Vv9e6Jh3X+dYca6D0AsfFX5mY3LmAdTi/gk64fPFa8WYqD36nsW+T7Qjt/ChNahJ3h0a4a/Kek80NA/ubck56rPm7CF1mvvYiFamn9VH51P5G3/WD+0598V5ajWsTTijdY48WKNjYmVNeG+pEzG/lt+7y/vKPLROzLmJXvbNfjAG3sfRe6nJmvroyIN2arAfWe2yb60X38ehN6E+NNfs7cUdY895z7mfsTIGnY/e61Krt8SusfEfw5ExtfK/F4vt3fgwPo2tsQNbMLLpuJP5l/Ft/ACqnTUk
+   eJydk8tKBDEQRYv+BGUQXepKtyKiX+Bz48LHqOvxuRnwNYofowyDfk7ThKbpj/EOneDta7WIi0OSqtStpCqZMbNZsJWZbYMdsAt69s1cpGc/7Rq3B/azxjcPFsAiWAJHsJ+APjgF51ljm3IoI9uPJe6MYpehuwIOwCoYwHYJrsA1uM0a27o1pPlA7BcSdxNj1+DbAJtgCO5guwcP/+ARPIEReAYv4JVIOUqQR2pQReoOSoL3V6STR38/1irtL0S7a16LPXe0Q5xzjpzGQs7KvpzyFeIvHQ29B+8NThzrJ1sgzSA6IeYYipan79VH15W1z+/1Q3vO+1I8awXyVRSjdU734Br95axck2DtfmltRzFHYe33yvfQOvH7CaLnzbkffAZ+j13/pXB8mqOke7CdNbgfXu28udaLe/7bn9Acelfv76U3xj3nd877+ax8Bl13/ddprd7AOxiDCTEmumw6TmT9AT7BF3jLIjQ=
   </data>
  </layer>
- <layer name="Tiles 3 - Shadows" width="25" height="18">
+ <layer name="Tiles 3 - Shadows" width="25" height="17">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4A+4BQjA8NpID7BSLres0TquQVUdxuIbwDxTTLsGergGg39fJRGZl8CmnsZiK8Mwng7N4jcMgpoBwCj4w00
+   eJxjYBgFQwmcYmRgOA3EJxhpox4EbgHV3gbiG2h6cJmFSz05bsFl1lki3Y+s/yaSHmLsJiescNlNjhpK7QeBawT0khq3yOAoBe7CZ/clIP8yEF/BEm/4AKXhRW56xKaP0rxBjL3kmjXUAQA5skK1
   </data>
  </layer>
- <layer name="Tiles 2" width="25" height="18">
+ <layer name="Tiles 2" width="25" height="17">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4A+YBYjA8NsIJ7JSLreuSTqWUmGHaMAE0wChuNkIJ4CxDNoFKaLgOYuBuIlQLxikMXbvEHmnlFAGwAAMwYIow==
+   eJxjYBgFQwnMYmRgmA3EMxlpox4ZrETTQ8gsdPWUuAXdrLkkup9Ut5PqPlLsJlYNtewnBhAbPpOA/MlAPAWIZ1DJXeh2LwLyFwPxEiBeQYIdlIYXMfrnQeWQ3YxNH6V5AxfApo9cs4YqAAC9FiPs
   </data>
  </layer>
- <objectgroup name="Object Layer 1" width="25" height="18">
+ <objectgroup name="Object Layer 1" width="25" height="17">
   <object name="Collision box" type="col" x="200" y="240" width="79" height="45"/>
   <object name="Collision box" type="col" x="564" y="403" width="117" height="62"/>
   <object name="Collision box" type="col" x="683" y="423" width="33" height="39"/>
   <object name="Collision box" type="col" x="281" y="263" width="32" height="33"/>
-  <object name="Portal1" type="portal" x="460" y="108" width="86" height="34">
+  <object name="Portal1" type="portal" x="693" y="102" width="57" height="16">
    <properties>
     <property name="id" value="1"/>
     <property name="toPortal" value="1"/>
     <property name="toRoom" value="1"/>
+   </properties>
+  </object>
+  <object name="Collision box" type="col" x="83" y="363" width="79" height="45"/>
+  <object name="Collision box" type="col" x="164" y="386" width="32" height="33"/>
+  <object name="Collision box" type="col" x="122" y="485" width="79" height="45"/>
+  <object name="Collision box" type="col" x="203" y="508" width="32" height="33"/>
+  <object name="Collision box" type="col" x="324" y="525" width="79" height="45"/>
+  <object name="Collision box" type="col" x="405" y="548" width="32" height="33"/>
+  <object name="Collision box" type="col" x="320" y="402" width="79" height="45"/>
+  <object name="Collision box" type="col" x="401" y="425" width="32" height="33"/>
+  <object name="Collision box" type="col" x="439" y="279" width="79" height="45"/>
+  <object name="Collision box" type="col" x="520" y="302" width="32" height="33"/>
+  <object name="Collision box" type="col" x="564" y="199" width="79" height="45"/>
+  <object name="Collision box" type="col" x="645" y="222" width="32" height="33"/>
+  <object name="Collision box" type="col" x="321" y="157" width="79" height="45"/>
+  <object name="Collision box" type="col" x="402" y="180" width="32" height="33"/>
+  <object name="Collision box" type="col" x="805" y="162" width="79" height="45"/>
+  <object name="Collision box" type="col" x="886" y="185" width="32" height="33"/>
+  <object name="Collision box" type="col" x="804" y="281" width="79" height="45"/>
+  <object name="Collision box" type="col" x="885" y="304" width="32" height="33"/>
+  <object name="Collision box" type="col" x="762" y="480" width="79" height="45"/>
+  <object name="Collision box" type="col" x="843" y="503" width="32" height="33"/>
+  <object name="Collision box" type="col" x="521" y="523" width="79" height="45"/>
+  <object name="Collision box" type="col" x="602" y="546" width="32" height="33"/>
+  <object name="Portal2" type="portal" x="129" y="100" width="57" height="15">
+   <properties>
+    <property name="id" value="2"/>
+    <property name="toPortal" value="1"/>
+    <property name="toRoom" value="3"/>
    </properties>
   </object>
  </objectgroup>

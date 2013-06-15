@@ -11,6 +11,7 @@ define(["src/config.js"], function(config) {
 		// self.obstacles = [];
 
 		// defaults
+		self.playerWarpFound = false;
 		self.playerX = 0;
 		self.playerY = 0;
 	}
@@ -20,7 +21,8 @@ define(["src/config.js"], function(config) {
 
 		$('#loading').show();
 		$('#loading').html('Entering ' + this.room.name + ' ...');
-		$.getJSON(this.room.file, function(json) {
+
+		$.getJSON(this.room.file, { "noCache": config.server.nocache }, function(json) {
 
 			Crafty.e("2D, " + config.screen.render + ", TiledMapBuilder").setMapDataSource(json)
 			.createWorld( function( map ) {
@@ -32,8 +34,32 @@ define(["src/config.js"], function(config) {
 							entity = entity.addComponent("Collision, Obstacle").collision();
 						} else if (entity.rName == 'portal') {
 							entity = entity.addComponent("Collision, Portal").collision();
+
+							// check if this is the portal player warped to
+							if (_Globals.player.currentRoom.toPortal == entity.tiledprops.id) {
+								console.log('warped from portal ' + entity.tiledprops.id);
+								//console.log('entity ', entity.x, entity.y, entity.w, entity.h);
+								self.PlayerX = (entity.x + entity.w / 2);
+								self.PlayerY = (entity.y);
+
+								// stupid hack that would prevent the player from immediatelly 
+								// colliding with the portal he warped to
+								if (entity.y < 350) {
+									self.PlayerY += (entity.h + 5);
+								} else {
+									self.PlayerY -= (48 + 10);
+								}
+
+								// if (entity.x < 350)
+								// 	self.PlayerX += entity.w + 5
+								// else 
+								// 	self.PlayerX -= (48 + 5);								
+
+								self.playerWarpFound = true;						
+							}
+
 							// has attribute - 'tiledprops'
-						} else if (entity.rName == 'warp') {
+						} else if (entity.rName == 'warp' && !self.playerWarpFound) {
 							self.PlayerX = entity.x;
 							self.PlayerY = entity.y;
 							// has attribute - 'tiledprops'

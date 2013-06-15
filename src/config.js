@@ -5,6 +5,7 @@ define([], function() {
         server : {
             baseUrl : location.protocol + '//' + location.hostname
                     + (location.port ? ':' + location.port : '') + '/',
+            nocache: Date()
         },
         build : {
             env : 'dev',

@@ -61,7 +61,7 @@ define(["src/config.js"], function(config) {
 				var disty = this.goal.y - y;
 				if ((distx * distx + disty * disty) < 200) {
 					this.goal.reached = true;			
-				}	
+				}
 
 				this.attr({x: x, y: y});
 
@@ -78,11 +78,15 @@ define(["src/config.js"], function(config) {
 					this.goal.reached = true;
 
 					//console.log('portal %s', portals[0].obj.tiledprops.toPortal);
+					var portal = portals[0].obj.tiledprops;
 
-					_Globals.currentRoom = 'room' + portals[0].obj.tiledprops.toRoom;
-					Crafty.scene('game');
 					// TODO: trigger event
-				}			
+					_Globals.player.currentRoom.fromPortal = portal.id;
+					_Globals.player.currentRoom.name = 'room' + portal.toRoom;
+					_Globals.player.currentRoom.toPortal = portal.toPortal;
+
+					Crafty.scene('game');
+				}
 			}
 
 			// If moving, adjust the proper animation and facing
@@ -111,7 +115,7 @@ define(["src/config.js"], function(config) {
 				this.moving = false;
 			} else {
 				this.stop();
-			} 
+			}
 			
 		})
 		.bind("MouseUp", function(event) {

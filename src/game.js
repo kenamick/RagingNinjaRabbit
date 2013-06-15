@@ -7,7 +7,7 @@ define(["src/config.js", "src/room.js", "src/player.js"], function(config, Room,
             $('#fps').text('FPS: ' + fps.value);
         });
 
-		var room = Room.create(_Globals.currentRoom);
+		var room = Room.create(_Globals.player.currentRoom.name);
 
 		// load room
 		room.load(function(warpAt) {
