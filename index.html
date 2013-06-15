@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Pincode (prototype)</title>
+    <title>Pin Code (prototype)</title>
     <link rel="shortcut icon" href="favicon.ico" />
     <link type="text/css" href="css/style.css" rel="stylesheet" /> 
 </head>
@@ -19,16 +19,14 @@
 
     <!-- libraries -->
     <script type="text/javascript" src="lib/jquery-1.10.1.min.js"></script>
-    <script type="text/javascript" src="lib/underscore-min.js"></script>
+    <!-- // <script type="text/javascript" src="lib/underscore-min.js"></script> -->
     <script type="text/javascript" src="lib/crafty-0.5.4.min.js"></script>
     <script type="text/javascript" src="lib/tiledmapbuilder.js"></script>
     <script type="text/javascript" src="lib/create_mocks_module.js"></script>
     <script type="text/javascript" src="lib/craftyMFace.js"></script>
     <!-- game stuff -->    
     <script type="text/javascript">
-    _Globals = {
-        env : 'dev',
-    };
+    var _Globals = {};
     var require = {
          waitSeconds: 15,
          urlArgs : "bust=" + new Date().getTime(),

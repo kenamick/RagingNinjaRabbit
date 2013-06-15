@@ -15,6 +15,7 @@ define(["src/config.js"], function(config) {
 	Room.prototype.load = function(callback) {
 		var self = this;
 
+		$('#loading').show();
 		$('#loading').html('Entering ' + this.room.name + ' ...');
 		$.getJSON(this.room.file, function(json) {
 

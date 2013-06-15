@@ -25,8 +25,16 @@ require(["src/config.js", "src/game.js"], function(config) {
 		    });
             Crafty.sprite("art/stuz_enemy.png", {
     		    enemy: [0, 0, 32, 48],
-		    });                
+		    });
+
+
+            // Static initializations
+
+            _Globals.startroom = 'room1';
+            _Globals.player = {};
             
+            // Load game scene
+
 		    Crafty.scene('game');
             
             // disable loading
