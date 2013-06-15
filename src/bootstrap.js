@@ -6,6 +6,12 @@ require(["src/config.js", "src/game.js"], function(config) {
     Crafty.init(config.screen.width, config.screen.height).canvas.init();
     Crafty.background('transparent');
 
+    // Render to Canvas for Chrom
+    var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+    if (is_chrome) {
+        config.screen.render = 'Canvas';
+    }
+
     /**
      * Load assets
      */
@@ -26,7 +32,6 @@ require(["src/config.js", "src/game.js"], function(config) {
             Crafty.sprite("art/stuz_enemy.png", {
     		    enemy: [0, 0, 32, 48],
 		    });
-
 
             // Static initializations
 
