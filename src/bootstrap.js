@@ -30,7 +30,7 @@ require(["src/config.js", "src/game.js"], function(config) {
 
             // Static initializations
 
-            _Globals.startroom = 'room1';
+            _Globals.currentRoom = 'room1';
             _Globals.player = {};
             
             // Load game scene

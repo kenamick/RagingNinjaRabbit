@@ -65,12 +65,24 @@ define(["src/config.js"], function(config) {
 
 				this.attr({x: x, y: y});
 
-				// Hit!
+				// Hit obstacle
 				if( this.hit('Obstacle') ) {
 					this.goal.reached = true;
 
 					this.attr({x: oldx, y: oldy});
-				}						
+				}
+
+				// Hit portal
+				var portals = this.hit('Portal');
+				if (portals) {
+					this.goal.reached = true;
+
+					//console.log('portal %s', portals[0].obj.tiledprops.toPortal);
+
+					_Globals.currentRoom = 'room' + portals[0].obj.tiledprops.toRoom;
+					Crafty.scene('game');
+					// TODO: trigger event
+				}			
 			}
 
 			// If moving, adjust the proper animation and facing
