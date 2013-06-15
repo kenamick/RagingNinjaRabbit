@@ -29,7 +29,8 @@ define(["src/config.js"], function(config) {
 		.attr({
 			move: {left: false, right: false, up: false, down: false},
 			x: this.x, y: this.y, z: 1,
-			speed: 2,
+			speed: 2.5,
+			anim_speed: 5,
 			moving: false,
 			goal: {reached: true, x: 0, y: 0}
 		})
@@ -42,24 +43,30 @@ define(["src/config.js"], function(config) {
 				var y = this.y;
 				var oldx = x;
 				var oldy = y;
+				var cx = this.x + this.w / 2;
+				var cy = this.y + this.h / 2;
 
-				if (x < this.goal.x) {
-					x += this.speed;
-				} else if (x > this.goal.x) {
-					x -= this.speed;
+				if (Math.abs(cx - this.goal.x) > 0.75) {
+					if (cx < this.goal.x) {
+						x += this.speed;
+					} else if (cx > this.goal.x) {
+						x -= this.speed;
+					}
 				}
 
-				if (y < this.goal.y) {
-					y += this.speed;
-				} else if (y > this.goal.y) {
-					y -= this.speed;
+				if (Math.abs(cy - this.goal.y) > 0.95) {
+					if (cy < this.goal.y) {
+						y += this.speed;
+					} else if (cy > this.goal.y) {
+						y -= this.speed;
+					}
 				}
 
 				this.moving = true;
 
-				var distx = this.goal.x - x;
-				var disty = this.goal.y - y;
-				if ((distx * distx + disty * disty) < 200) {
+				var distx = this.goal.x - cx;
+				var disty = this.goal.y - cy;
+				if ((distx * distx + disty * disty) < 100) {
 					this.goal.reached = true;			
 				}
 
@@ -109,7 +116,7 @@ define(["src/config.js"], function(config) {
 
 				if (anim) {
 					if (!this.isPlaying(anim))
-						this.stop().animate(anim, 8, -1); 
+						this.stop().animate(anim, this.anim_speed, -1); 
 				}
 
 				this.moving = false;
