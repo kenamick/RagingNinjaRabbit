@@ -34,7 +34,7 @@ require(["src/config.js", "src/game.js"], function(config) {
         },
         // On Progress
         function(e) {
-            console.log(e);
+            // console.log(e);
             //$('#loading').html('Loaded: ' + e.percent.toFixed(0) + '%');
         },
         // On Error
