@@ -22,24 +22,57 @@ define(["src/config.js"], function(config) {
 	}
 
 	Player.prototype.create = function() {
+		var self = this;
 
 		// create character
-		var entity = Crafty.e("2D, DOM, player, CharAnims, Multiway, MouseFace")
+		var entity = Crafty.e("2D, " + config.screen.render + ", player, CharAnims, Multiway, MouseFace")
 		.attr({
 			move: {left: false, right: false, up: false, down: false},
 			x: this.x, y: this.y, z: 1,
-			moving: false
+			speed: 2,
+			moving: false,
+			goal: {reached: true, x: 0, y: 0}
 		})
 		.CharAnims()
-		.bind("Moved", function(from) {
-			this.moving = true;
-
-			// Hit!
-			if( this.hit('Obstacle') ) {
-				this.attr({x: from.x, y:from.y});
-			}
-		})
 		.bind("EnterFrame", function() {
+
+			if (!this.goal.reached) {
+
+				var x = this.x;
+				var y = this.y;
+				var oldx = x;
+				var oldy = y;
+
+				if (x < this.goal.x) {
+					x += this.speed;
+				} else if (x > this.goal.x) {
+					x -= this.speed;
+				}
+
+				if (y < this.goal.y) {
+					y += this.speed;
+				} else if (y > this.goal.y) {
+					y -= this.speed;
+				}
+
+				this.moving = true;
+
+				var distx = this.goal.x - x;
+				var disty = this.goal.y - y;
+				if ((distx * distx + disty * disty) < 200) {
+					this.goal.reached = true;			
+				}	
+
+				this.attr({x: x, y: y});
+
+				// Hit!
+				if( this.hit('Obstacle') ) {
+					this.goal.reached = true;
+
+					this.attr({x: oldx, y: oldy});
+				}						
+			}
+
 			// If moving, adjust the proper animation and facing
 			if (this.moving) {
 				var anim = null;
@@ -67,8 +100,14 @@ define(["src/config.js"], function(config) {
 			} else {
 				this.stop();
 			} 
+			
 		})
-		.multiway(2, {W: -90, S: 90, D: 0, A: 180})
+		.bind("MouseUp", function(event) {
+			this.goal.x = event.realX;
+			this.goal.y = event.realY;
+			this.goal.reached = false;
+		})
+		//.multiway(2, {W: -90, S: 90, D: 0, A: 180})
 		.collision( [4, 30], [28, 30], [28, 48], [4, 48]);	
 
 		this.entity = entity;

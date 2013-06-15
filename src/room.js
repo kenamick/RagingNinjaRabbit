@@ -7,6 +7,9 @@ define(["src/config.js"], function(config) {
 		self.id = id;
 		self.room = config.gameplay.rooms["" +self.id];
 
+		// self.portals = [];
+		// self.obstacles = [];
+
 		// defaults
 		self.playerX = 0;
 		self.playerY = 0;
@@ -29,10 +32,11 @@ define(["src/config.js"], function(config) {
 							entity = entity.addComponent("Collision, Obstacle").collision();
 						} else if (entity.rName == 'portal') {
 							entity = entity.addComponent("Collision, Portal").collision();
+							// has attribute - 'tiledprops'
 						} else if (entity.rName == 'warp') {
-							console.log(entity);
 							self.PlayerX = entity.x;
 							self.PlayerY = entity.y;
+							// has attribute - 'tiledprops'
 						}	
 					}
 				});
