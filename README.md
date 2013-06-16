@@ -4,6 +4,8 @@ _.o0 Pin Code 0o._
 
 HTML5/Javascript game prototype.
 
+![alt text](http://i.imgur.com/ZBn9Z2u.png "Prototype Screenshot")
+
 # How to play
 Use the controls to move around the rooms.
 
