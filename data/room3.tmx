@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="25" height="17" tilewidth="40" tileheight="40">
+ <tileset firstgid="1" name="Walls-1" tilewidth="40" tileheight="40">
+  <image source="art/tiles1.png" width="640" height="480"/>
+ </tileset>
+ <tileset firstgid="193" name="Floor-1" tilewidth="40" tileheight="40">
+  <image source="art/tiles3.png" width="640" height="480"/>
+  <terraintypes>
+   <terrain name="Floor" tile="-1"/>
+  </terraintypes>
+ </tileset>
+ <tileset firstgid="385" name="BENCH" tilewidth="40" tileheight="40">
+  <image source="art/tiles2.png" trans="ffffff" width="640" height="480"/>
+ </tileset>
+ <tileset firstgid="577" name="Walls-2" tilewidth="40" tileheight="40">
+  <image source="art/tiles5.png" width="640" height="480"/>
+ </tileset>
+ <layer name="Tiles 1" width="25" height="17">
+  <data encoding="base64" compression="zlib">
+   eJyNlElKxFAQhh85gtKILhUR3YqIfQKnlSuNHkBREASnKB6mRQSP04QQgnunAzis/Jt+Rf/+1osGPuoNlZqTsRDCOOiAiUhHsPPVLIQ1sA42wGY2umc9YxJMgWkwA+YSzJLchs0dkINdsJf9vNd358EC2AKLYElYJmy/D5sHkUNwlP3W5XdWQBecgFPonkXOW7gAl6AAV+D6D26ykY8S9Ima6Cek3tdiw87z6MP2Jfmzfe2sa7Hj2a7iuhv7oXF69kw2jp6Xm91pHqxbJeJu5Kwim5XYqajnteDZ1zPVZ1/sJ4+10lqqLOWeYy6dPfsvyEcqRq9eXp6pGbN+WBw6u9p/b34eHT+8Lqgf3my0fTMWVyN5qT7PFc8C9+A/tWv7Jq3nqW8sVeO2XLnmpeTBs+fpp2buGNyBJ/ybnsELeAVvg39m7EcP3Ea9AfciU2uTD2H4vMPmB/gEX9nwrBfvvwFygxk1
+  </data>
+ </layer>
+ <layer name="Tiles 3 - Shadows" width="25" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgxGcZRxoF1AfnAL66TQQnyDRb7CwOEaEvltANbeB+AYQ3xyGYTgK6A8uAdPRZSC+MpquBgQAAIPqDF0=
+  </data>
+ </layer>
+ <layer name="Tiles 2" width="25" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgxHMZRxoF1AfzAL6aTYQzyTRb7CwmEaCvpXDMPxGASaYBIznyUA8BYhn0CjOFwHNXQzES4B4xWi6ojsAAEcnCTk=
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1" width="25" height="17">
+  <object name="Collision box" type="col" x="200" y="240" width="79" height="45"/>
+  <object name="Collision box" type="col" x="844" y="241" width="34" height="35"/>
+  <object name="Collision box" type="col" x="281" y="263" width="32" height="33"/>
+  <object name="Collision box" type="col" x="281" y="501" width="33" height="39"/>
+  <object name="Collision box" type="col" x="162" y="481" width="117" height="62"/>
+  <object name="Portal1" type="portal" x="768" y="632" width="65" height="19">
+   <properties>
+    <property name="id" value="1"/>
+    <property name="toPortal" value="2"/>
+    <property name="toRoom" value="2"/>
+   </properties>
+  </object>
+  <object name="Portal2" type="portal" x="496" y="98" width="51" height="17">
+   <properties>
+    <property name="code" value="1227"/>
+    <property name="id" value="2"/>
+    <property name="toPortal" value="1"/>
+    <property name="toRoom" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -31,6 +31,10 @@ define([], function() {
                 room2: {
                     name: 'Room #2',
                     file: 'data/room2.json'
+                },
+                room3: {
+                    name: 'Room #3',
+                    file: 'data/room3.json'
                 }
             }
         }
