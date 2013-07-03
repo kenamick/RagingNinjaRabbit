@@ -87,12 +87,12 @@ define(["src/config.js"], function(config) {
 					//console.log('portal %s', portals[0].obj.tiledprops.toPortal);
 					var portal = portals[0].obj.tiledprops;
 
-					// TODO: trigger event
-					_Globals.player.currentRoom.fromPortal = portal.id;
-					_Globals.player.currentRoom.name = 'room' + portal.toRoom;
-					_Globals.player.currentRoom.toPortal = portal.toPortal;
-
-					Crafty.scene('game');
+					if (portal.code) {
+						// TODO: pin required
+						Crafty.trigger('ShowMsg', 'Door is locked!');
+					} else {
+						Crafty.trigger('Teleport', portal);
+					}
 				}
 			}
 
