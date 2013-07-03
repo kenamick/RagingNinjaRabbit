@@ -19,6 +19,32 @@ define(["src/config.js", "src/room.js", "src/player.js"], function(config, Room,
 
 		});
 
+		// Show in-game message
+		Crafty.bind("ShowMsg", function(msg) {
+			$('#msgs').stop(true);
+			$('#msgs').css('opacity', '1.0');
+			$('#msgs').css('fontSize', '26px');
+			$('#msgs').text('');
+
+			if (msg) {
+			    //$('#msgs').css('color','#aa0000');
+			    $('#msgs').text(msg);
+			} else {
+			    $('#msgs').text('');
+			    return;
+			}
+
+			$('#msgs').fadeTo(800, 0);
+		});
+
+		// Teleport to room
+		Crafty.bind("Teleport", function(portal) {
+			_Globals.player.currentRoom.fromPortal = portal.id;
+			_Globals.player.currentRoom.name = 'room' + portal.toRoom;
+			_Globals.player.currentRoom.toPortal = portal.toPortal;
+			Crafty.scene('game');
+		});
+
 
 	});
 });
