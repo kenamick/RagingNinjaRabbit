@@ -63,14 +63,17 @@ define(["src/config.js"], function(config) {
 							self.PlayerX = entity.x;
 							self.PlayerY = entity.y;
 							// has attribute - 'tiledprops'
-						}	
+						} else if (entity.rName == 'potion') {
+							entity = entity.addComponent("Collision, Potion").collision();
+						}
 					}
+
+					// notify
+					callback({x: self.PlayerX, y: self.PlayerY, map: map});
 				});
 
 			$('#loading').hide();
 
-			// notify
-			callback({x: self.PlayerX, y: self.PlayerY});
 		});		
 	};
 

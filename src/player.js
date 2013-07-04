@@ -14,14 +14,17 @@ define(["src/config.js"], function(config) {
 		}
 	});
 
-	function Player(x, y) {
+	function Player(x, y, map) {
 		var self = this;
 
 		self.x = x;
 		self.y = y;
+		self.map = map;
+		console.log(map);
+		self.items = [];
 	}
 
-	Player.prototype.create = function() {
+	Player.prototype.init = function() {
 		var self = this;
 
 		// create character
@@ -94,6 +97,19 @@ define(["src/config.js"], function(config) {
 						Crafty.trigger('Teleport', portal);
 					}
 				}
+
+				// Hit item
+				var potions = this.hit('Potion');
+				if (potions) {
+					var col = potions[0].obj;
+					var potion = col.tiledprops;
+
+					// remove tile
+					var sprite = self.map.getTile(Math.floor(potion.spriteY), Math.floor(potion.spriteX), 'Tiles 2');
+					sprite.destroy();
+					// remove collision object
+					col.destroy();
+				}
 			}
 
 			// If moving, adjust the proper animation and facing
@@ -141,8 +157,8 @@ define(["src/config.js"], function(config) {
 	};
 
 	return {
-		create: function(x, y) {
-			return new Player(x, y);
+		create: function(x, y, map) {
+			return new Player(x, y, map);
 		}
 	};
 

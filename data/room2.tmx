@@ -15,6 +15,9 @@
  <tileset firstgid="577" name="Walls-2" tilewidth="40" tileheight="40">
   <image source="art/tiles5.png" width="640" height="480"/>
  </tileset>
+ <tileset firstgid="769" name="Potions" tilewidth="32" tileheight="32">
+  <image source="art/potions32.png" width="192" height="320"/>
+ </tileset>
  <layer name="Tiles 1" width="25" height="17">
   <data encoding="base64" compression="zlib">
    eJydk8tKBDEQRYv+BGUQXepKtyKiX+Bz48LHqOvxuRnwNYofowyDfk7ThKbpj/EOneDta7WIi0OSqtStpCqZMbNZsJWZbYMdsAt69s1cpGc/7Rq3B/azxjcPFsAiWAJHsJ+APjgF51ljm3IoI9uPJe6MYpehuwIOwCoYwHYJrsA1uM0a27o1pPlA7BcSdxNj1+DbAJtgCO5guwcP/+ARPIEReAYv4JVIOUqQR2pQReoOSoL3V6STR38/1irtL0S7a16LPXe0Q5xzjpzGQs7KvpzyFeIvHQ29B+8NThzrJ1sgzSA6IeYYipan79VH15W1z+/1Q3vO+1I8awXyVRSjdU734Br95axck2DtfmltRzFHYe33yvfQOvH7CaLnzbkffAZ+j13/pXB8mqOke7CdNbgfXu28udaLe/7bn9Acelfv76U3xj3nd877+ax8Bl13/ddprd7AOxiDCTEmumw6TmT9AT7BF3jLIjQ=
@@ -27,7 +30,7 @@
  </layer>
  <layer name="Tiles 2" width="25" height="17">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFQwnMYmRgmA3EMxlpox4ZrETTQ8gsdPWUuAXdrLkkup9Ut5PqPlLsJlYNtewnBhAbPpOA/MlAPAWIZ1DJXeh2LwLyFwPxEiBeQYIdlIYXMfrnQeWQ3YxNH6V5AxfApo9cs4YqAAC9FiPs
+   eJxjYBgFQwnMYmRgmA3EMxlpox4ZrETTQ8gsdPWUuAXdrLkkup9Ut5PqPlLsJlYNtewnBhAbPpOA/MlAPAWIZ+BwlwAzZXYvAvIXA/ESIF5Bgt8pDS9i9M+DyiG7GZs+cvMGN4Gww6aPmPQ1nAAA+igkDQ==
   </data>
  </layer>
  <objectgroup name="Object Layer 1" width="25" height="17">
@@ -69,6 +72,20 @@
     <property name="id" value="2"/>
     <property name="toPortal" value="1"/>
     <property name="toRoom" value="3"/>
+   </properties>
+  </object>
+  <object name="PotionB" type="potion" x="926" y="425" width="16" height="15">
+   <properties>
+    <property name="spriteX" value="23"/>
+    <property name="spriteY" value="10"/>
+    <property name="type" value="blue1"/>
+   </properties>
+  </object>
+  <object name="PotionR" type="potion" x="87" y="584" width="16" height="16">
+   <properties>
+    <property name="spriteX" value="2"/>
+    <property name="spriteY" value="14"/>
+    <property name="type" value="red1"/>
    </properties>
   </object>
  </objectgroup>

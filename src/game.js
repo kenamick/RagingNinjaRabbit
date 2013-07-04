@@ -13,8 +13,8 @@ define(["src/config.js", "src/room.js", "src/player.js"], function(config, Room,
 		room.load(function(warpAt) {
 
 			// done, now show player at warp position
-			var player = Player.create(warpAt.x, warpAt.y);
-			player.create();
+			var player = Player.create(warpAt.x, warpAt.y, warpAt.map);
+			player.init();
 
 
 		});
