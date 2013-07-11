@@ -13,6 +13,17 @@ define(["src/config.js"], function(config) {
 		return this;
 		}
 	});
+	
+	// Teleport to room
+	Crafty.bind("Teleport", function(portal) {
+		_Globals.player.currentRoom.fromPortal = portal.id;
+		_Globals.player.currentRoom.name = 'room' + portal.toRoom;
+		_Globals.player.currentRoom.toPortal = portal.toPortal;
+		
+		Crafty("2D").each(function () {this.destroy();}) 
+
+		Crafty.scene('game');
+	});	
 
 	function Player(x, y, map) {
 		var self = this;

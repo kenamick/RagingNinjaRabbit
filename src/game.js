@@ -36,15 +36,5 @@ define(["src/config.js", "src/room.js", "src/player.js"], function(config, Room,
 
 			$('#msgs').fadeTo(800, 0);
 		});
-
-		// Teleport to room
-		Crafty.bind("Teleport", function(portal) {
-			_Globals.player.currentRoom.fromPortal = portal.id;
-			_Globals.player.currentRoom.name = 'room' + portal.toRoom;
-			_Globals.player.currentRoom.toPortal = portal.toPortal;
-			Crafty.scene('game');
-		});
-
-
 	});
 });
