@@ -7,11 +7,11 @@ require(["src/config.js", "src/game.js"], function(config) {
     Crafty.background('transparent');
 
     // Render to Canvas for Chrom
-    var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
-    var is_ipad = navigator.userAgent.toLowerCase().indexOf('ipad') > -1;
-    if (is_chrome || is_ipad) {
-        config.screen.render = 'Canvas';
-    }
+    //var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+    //var is_ipad = navigator.userAgent.toLowerCase().indexOf('ipad') > -1;
+    //if (is_chrome || is_ipad) {
+    //    config.screen.render = 'Canvas';
+    //}
 
     /**
      * Load assets

@@ -19,7 +19,7 @@ define([], function() {
             width: 1024,
             height: 768,
             fps: 60,
-            render: 'DOM'
+            render: 'Canvas'
         },
 
         gameplay: {
