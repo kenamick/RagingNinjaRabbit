@@ -1,3 +1,8 @@
+/**
+ * Raging Ninja Rabbit - 2D RPG demo
+ * https://github.com/petarov/pin-code
+ */
+
 define(["src/config.js", "src/room.js", "src/player.js"], function(config, Room, Player) {
 	Crafty.scene("game", function() {
 

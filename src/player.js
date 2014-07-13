@@ -1,15 +1,20 @@
-define(["src/config.js"], function(config) {
+/**
+ * Raging Ninja Rabbit - 2D RPG demo
+ * https://github.com/petarov/pin-code
+ */
 
+define(["src/config.js"], function(config) {
 
 	// character animation 
 	Crafty.c('CharAnims', {
 		CharAnims: function() {
+			var animSpeed = 200;
 			// setup animations sequences
 			this.requires("SpriteAnimation, Grid, Collision")
-			.animate("walk_left", [ [0, 96], [32, 96], [64, 96] ])
-			.animate("walk_right", [ [0, 144], [32, 144], [64, 144] ])
-			.animate("walk_up", [ [0, 48], [32, 48], [64, 48] ])
-			.animate("walk_down", [ [0, 0], [32, 0], [64, 0] ]);
+			.reel("walk_left", animSpeed, [ [0, 96], [32, 96], [64, 96] ])
+			.reel("walk_right", animSpeed, [ [0, 144], [32, 144], [64, 144] ])
+			.reel("walk_up", animSpeed, [ [0, 48], [32, 48], [64, 48] ])
+			.reel("walk_down", animSpeed, [ [0, 0], [32, 0], [64, 0] ]);
 		return this;
 		}
 	});
@@ -31,7 +36,7 @@ define(["src/config.js"], function(config) {
 		self.x = x;
 		self.y = y;
 		self.map = map;
-		console.log(map);
+		// console.log(map);
 		self.items = [];
 	}
 
@@ -44,7 +49,6 @@ define(["src/config.js"], function(config) {
 			move: {left: false, right: false, up: false, down: false},
 			x: this.x, y: this.y, z: 1,
 			speed: 2.5,
-			anim_speed: 5,
 			moving: false,
 			goal: {reached: true, x: 0, y: 0}
 		})
@@ -143,12 +147,12 @@ define(["src/config.js"], function(config) {
 
 				if (anim) {
 					if (!this.isPlaying(anim))
-						this.stop().animate(anim, this.anim_speed, -1); 
+						this.animate(anim, -1); 
 				}
 
 				this.moving = false;
 			} else {
-				this.stop();
+				this.pauseAnimation();
 			}
 			
 		})

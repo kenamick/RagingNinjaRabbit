@@ -1,3 +1,8 @@
+/**
+ * Raging Ninja Rabbit - 2D RPG demo
+ * https://github.com/petarov/pin-code
+ */
+
 require(["src/config.js", "src/game.js"], function(config) {
     
     /**

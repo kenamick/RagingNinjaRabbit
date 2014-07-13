@@ -1,10 +1,9 @@
-_.o0 Pin Code 0o._
-==========================
-*(working title)*
+_.o0 Raging Ninja Rabbit 0o._
+===============================
 
-HTML5/Javascript game prototype.
+CraftyJS HTML5/Javascript game prototype/demo.
 
-![alt text](http://i.imgur.com/ZBn9Z2u.png "Prototype Screenshot")
+![alt text](http://i.imgur.com/ZBn9Z2u.png "Demo screenshot")
 
 # How to play
 Use the controls to move around the rooms.
