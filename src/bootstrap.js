@@ -33,11 +33,11 @@ require(["src/config.js", "src/game.js"], function(config) {
         function() {
             // --- Graphics
             Crafty.sprite("art/stuz_rabbit.png", {
-			    player: [0, 0, 32, 48],
-		    });
+                player: [0, 0, 32, 48],
+            });
             Crafty.sprite("art/stuz_enemy.png", {
-    		    enemy: [0, 0, 32, 48],
-		    });
+                enemy: [0, 0, 32, 48],
+            });
 
             // Static initializations
 
@@ -52,7 +52,7 @@ require(["src/config.js", "src/game.js"], function(config) {
             
             // Load game scene
 
-		    Crafty.scene('game');
+            Crafty.scene('game');
             
             // disable loading
             //$('#loading').hide();
