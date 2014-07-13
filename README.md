@@ -10,7 +10,7 @@ CraftyJS HTML5/Javascript game prototype/demo.
   * Mouse **click** or **tap** moves your character.
   * Move character to a door to enter another room.
 
-## Open Source Libs & Tools
+## Open source libs & tools
 Uses the following javascript libraries:
 
   * [Crafty](http://craftyjs.com/) - An amazing Javascript/HTML5 Game engine.  
@@ -20,6 +20,6 @@ Uses the following javascript libraries:
 
 Game maps created with [Tiled](http://www.mapeditor.org/).
 
-## Graphics
+## Artwork
   * Rabbit sprite by [stremena.com](http://stremena.com).
-  * All other art from [OpenGameArt.org](opengameart.org). 
+  * All other art from [OpenGameArt.org](http://opengameart.org). 
