@@ -4,7 +4,7 @@
 }
 body, html { 
     /*overflow:hidden; */
-    background: #000;
+    background: #000 url('../art/stuz_bg.png');
     font-family: Tahoma, Sans-serif, Helvetica;
 } 
 
